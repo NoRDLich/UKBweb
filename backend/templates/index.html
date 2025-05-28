@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parquet 文件查询</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>选择 Parquet 文件</h1>
+        <div id="file-selection-area">
+            <h3>选择文件:</h3>
+            <input type="text" id="file-search-input" placeholder="搜索文件名..." title="输入文件名进行搜索">
+            <div id="file-checkbox-container" class="file-grid">
+                <p>正在加载文件列表...</p>
+            </div>
+            <button id="show-all-files-btn" style="display:none;">显示所有文件</button>
+        </div>
+        <button id="load-columns-btn">加载并显示列名</button>
+        
+        <hr>
+        
+        <h2>可用列（来自选中文件的合并数据）</h2>
+        <div id="column-selection-area">
+            <p>请先加载文件以查看列名。</p>
+            <textarea id="columns-display" rows="10" style="width:100%;" readonly placeholder="所有列名将显示在这里..."></textarea>
+            <br>
+            <label for="select-target-columns">选择要查询的列 (用逗号分隔, 或输入 '*' 表示所有列):</label>
+            <input type="text" id="select-target-columns" style="width:100%;" placeholder="例如: column_A, column_B, column_C">
+        </div>
+        <button id="get-data-btn">获取选中列的数据</button>
+        
+        <hr>
+        
+        <h2>查询结果</h2>
+        <div id="results-area">
+            <p>结果将显示在这里。</p>
+            <table id="results-table">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

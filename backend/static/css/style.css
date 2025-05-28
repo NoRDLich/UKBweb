@@ -1,0 +1,60 @@
+body { font-family: sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+.container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+h1, h2, h3 { color: #333; } /* Applied h3 styling */
+button {
+    background-color: #007bff; color: white; padding: 10px 15px;
+    border: none; border-radius: 4px; cursor: pointer; margin-top: 10px; margin-bottom: 10px;
+}
+button:hover { background-color: #0056b3; }
+
+/* 文件选择区域样式 */
+#file-search-input {
+    width: calc(100% - 20px); /* Adjust width to account for padding */
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 列 */
+    gap: 8px 15px; /* 行间距 列间距 */
+    margin-bottom: 10px;
+}
+
+.file-item { /* 包裹每个 checkbox 和 label 的容器 */
+    display: block; /* 让label换行 */
+    padding: 5px;
+    border: 1px solid transparent; /* Optional: for hover effects */
+    border-radius: 3px;
+    overflow: hidden; /* 避免内容溢出 */
+    text-overflow: ellipsis; /* 显示省略号 */
+    white-space: nowrap; /* 防止换行 */
+}
+
+.file-item label {
+    display: inline-flex; /* To align checkbox and text nicely */
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+}
+.file-item input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+
+#results-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+#results-table th, #results-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+#results-table th { background-color: #e9ecef; }
+#results-table td { word-break: break-all; } /* 处理很长的单元格内容 */
+textarea, input[type="text"]#select-target-columns { /* Target specific input */
+    width: calc(100% - 20px); /* Adjust width for padding */
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+hr { margin: 20px 0; }
